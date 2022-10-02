@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org/">
+<head>
+    <style type="text/css">
+        .header{
+            background-color: #ececec;
+            display: flex;
+            justify-content: space-between;
+        }
+        .header ul{
+            display: flex;
+            list-style-type: none;
+
+        }
+        .header ul li{
+            padding: 20px;
+        }
+        .header ul li a{
+            color: black;
+            font-size: 20px;
+            text-decoration: none;
+        }
+    </style>
+    <meta charset="UTF-8">
+    <title>Employee</title>
+</head>
+<body>
+
+<table class="table" border="1px">
+    <div class="header">
+        <ul class="Home">
+            <li><a href="/company/add"> Add Company </a></li>
+            <li><a href="/employee"> Employee </a></li>
+            <li><a href="/">Logout</a></li>
+        </ul>
+    </div> <hr> <br>
+    <tr>
+        <th>id</th>
+        <th>name</th>
+        <th>surname</th>
+        <th>email</th>
+        <th>phoneNumber</th>
+        <th>salary</th>
+        <th>position</th>
+        <th>company_id</th>
+        <th>profilePic</th>
+        <th>Remove</th>
+    </tr>
+    <tr th:each="employee: ${employees}">
+        <td th:text="${employee.id}"></td>
+        <td th:text="${employee.name}"></td>
+        <td th:text="${employee.surname}"></td>
+        <td th:text="${employee.email}"></td>
+        <td th:text="${employee.phoneNumber}"></td>
+        <td th:text="${employee.salary}"></td>
+        <td th:text="${employee.position}"></td>
+        <td th:text="${employee.company.name}"></td>
+        <td>
+            <img th:if="${employee.profilePic != null}"
+                 th:src="@{/employee/getImage(fileName=${employee.profilePic})}" width="100">
+            <img th:if="${employee.profilePic == null}" src="/images/162065030153.jpg" width="100">
+
+
+        </td>
+
+        <td>
+            <a th:href="@{/employee/delete(id=${employee.id})}">delete</a>
+        </td>
+    </tr>
+
+
+</table>
+</body>
+</html>
