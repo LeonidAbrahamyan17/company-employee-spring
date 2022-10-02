@@ -1,10 +1,25 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org/">
+
 <head>
   <meta charset="UTF-8">
-  <title>$Title$</title>
+  <title>ADD EMPLOYEE</title>
 </head>
 <body>
-$END$
+<form action="/employee/add" method="post" enctype="multipart/form-data">
+  <input type="text" name="name" placeholder="name"><br>
+  <input type="text" name="surname" placeholder="surname"><br>
+  <input type="text" name="email" placeholder="email"><br>
+  <input type="number" name="phoneNumber" placeholder="phoneNumber"><br>
+  <input type="number" name="salary" placeholder="salary"><br>
+  <input type="text" name="position" placeholder="position"><br>
+  <label for="employeeImage">Employee</label>
+  <input type="file" name="employeeImage" id="employeeImage"><br>
+  <select name="company.id">
+    <option th:each="company:${companies}" th:text="${company.name}" th:value="${company.id}"></option>
+  </select>
+  <input type="submit" value="add employee">
+
+</form>
 </body>
 </html>

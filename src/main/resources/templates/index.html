@@ -1,10 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <style type="text/css">
+    .header{
+      background-color: #ececec;
+      display: flex;
+      justify-content: space-between;
+    }
+    .header ul{
+      display: flex;
+      list-style-type: none;
+
+    }
+    .header ul li{
+      padding: 20px;
+    }
+    .header ul li a{
+      color: black;
+      font-size: 20px;
+      text-decoration: none;
+    }
+  </style>
   <meta charset="UTF-8">
-  <title>$Title$</title>
+  <title>Company Employee</title>
 </head>
-<body>
-$END$
+<body bgcolor="#f5f5dc">
+<div class="header">
+<ul class="Home">
+  <li><a href="/company"> Company </a></li>
+  <li><a href="/employee"> Employee </a></li>
+  <li><a href="/users">users</a></li>
+  <li><a href="/users/add">Add Users</a></li>
+  <li><a href="/">Logout</a></li>
+</ul>
+</div>
 </body>
 </html>
