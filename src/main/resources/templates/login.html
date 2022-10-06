@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <head>
+    <style type="text/css">
+      .user{
+        margin-left: 650px;
+      }
+      .header{
+        background-color: #ececec;
+        display: flex;
+        justify-content: space-between;
+      }
+      .header ul{
+        display: flex;
+        list-style-type: none;
+
+      }
+      .header ul li{
+        padding: 20px;
+      }
+      .header ul li a{
+        color: black;
+        font-size: 20px;
+        text-decoration: none;
+      }
+    </style>
+    <meta charset="UTF-8">
+    <title>Company</title>
+  </head>
+<body>
+<div class="header">
+  <ul class="Home">
+    <h1 class="user">Login</h1>
+  </ul>
+</div> <hr> <br>
+
+</body>
+<meta charset="UTF-8">
+<title>Add user</title>
+</head>
+<body>
+<form action="/login" method="post">
+  <input type="email" name="username" placeholder="please input email">
+  <input type="password" name="password" placeholder="please input password">
+  <input type="submit" name="login">
+</form>
+<a href="/users/add">register</a>
+</body>
+</html>

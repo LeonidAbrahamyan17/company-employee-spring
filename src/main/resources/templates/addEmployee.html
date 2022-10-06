@@ -2,8 +2,46 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org/">
 
 <head>
+  <head>
+    <style type="text/css">
+      .user{
+        margin-left: 620px;
+      }
+      .header{
+        background-color: #ececec;
+        display: flex;
+        justify-content: space-between;
+      }
+      .header ul{
+        display: flex;
+        list-style-type: none;
+
+      }
+      .header ul li{
+        padding: 20px;
+      }
+      .header ul li a{
+        color: black;
+        font-size: 20px;
+        text-decoration: none;
+      }
+    </style>
+    <meta charset="UTF-8">
+    <title>Company</title>
+  </head>
+<body>
+<div class="header">
+  <ul class="Home">
+    <h1 class="user">Add new employee</h1>
+  </ul>
+</div> <hr> <br>
+
+</body>
+<meta charset="UTF-8">
+<title>Add user</title>
+</head>
   <meta charset="UTF-8">
-  <title>ADD EMPLOYEE</title>
+  <title>Add Employee</title>
 </head>
 <body>
 <form action="/employee/add" method="post" enctype="multipart/form-data">

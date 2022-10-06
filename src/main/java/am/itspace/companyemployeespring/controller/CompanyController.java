@@ -2,7 +2,6 @@ package am.itspace.companyemployeespring.controller;
 
 import am.itspace.companyemployeespring.entity.Company;
 import am.itspace.companyemployeespring.repository.CompanyRepository;
-import am.itspace.companyemployeespring.repository.EmployeeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -18,29 +17,33 @@ public class CompanyController {
 
     @Autowired
     private CompanyRepository companyRepository;
-    @Autowired
-    private EmployeeRepository employeeRepository;
 
-    @GetMapping("/company/add")
-    public String companys(ModelMap modelMap) {
+
+    @GetMapping("/companies")
+    public String companies(ModelMap modelMap) {
+        List<Company> all = companyRepository.findAll();
+        modelMap.addAttribute("companies", all);
+        return "companies";
+    }
+
+    @GetMapping("/companies/add")
+    public String addUserPage() {
+
         return "addCompany";
     }
 
-    @PostMapping("/company/add")
+    @PostMapping("/companies/add")
     public String addCompany(@ModelAttribute Company company) {
         companyRepository.save(company);
-        return "redirect:/company";
+
+        return "redirect:/companies";
     }
 
-    @GetMapping("/company")
-    public String company(ModelMap modelMap) {
-        List<Company> companies = companyRepository.findAll();
-        modelMap.addAttribute("company", companies);
-        return "company";
-    }
-    @GetMapping("/company/delete")
-    public String delete(@RequestParam("id") int id){
+
+    @GetMapping("/companies/delete")
+    public String delete(@RequestParam("id") int id) {
         companyRepository.deleteById(id);
-        return "redirect:/company";
+        return "redirect:/companies";
     }
+
 }

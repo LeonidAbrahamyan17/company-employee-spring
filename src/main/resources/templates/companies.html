@@ -22,13 +22,13 @@
     }
   </style>
   <meta charset="UTF-8">
-  <title>Title</title>
+  <title>Company</title>
 </head>
 <body>
 <div class="header">
   <ul class="Home">
-    <li><a href="/company/add"> Add Company </a></li>
-    <li><a href="/employee"> Employee </a></li>
+    <li><a href="/companies/add"> Add Company </a></li>
+    <li><a href="/employees"> Employee </a></li>
     <li><a href="/">Logout</a></li>
   </ul>
 </div> <hr> <br>
@@ -42,12 +42,12 @@
     <th>remove</th>
 
   </tr>
-  <tr th:each="companes: ${company}">
-    <td th:text="${companes.id}"></td>
-    <td th:text="${companes.name}"></td>
-    <td th:text="${companes.address}"></td>
-    <td th:text="${companes.size}"></td>
-    <td>
+  <tr th:each="companies: ${company}">
+    <td th:text="${companies.id}"></td>
+    <td th:text="${companies.name}"></td>
+    <td th:text="${companies.address}"></td>
+    <td th:text="${companies.size}"></td>
+    <td>i
       <a th:href="@{/company/delete(id=${companes.id})}">delete</a>
     </td>
   </tr>

@@ -29,8 +29,8 @@
 <table class="table" border="1px">
     <div class="header">
         <ul class="Home">
-            <li><a href="/company/add"> Add Company </a></li>
-            <li><a href="/employee"> Employee </a></li>
+            <li><a href="/companies/add"> Add Company </a></li>
+            <li><a href="/employees"> Employee </a></li>
             <li><a href="/">Logout</a></li>
         </ul>
     </div> <hr> <br>
@@ -58,7 +58,7 @@
         <td>
             <img th:if="${employee.profilePic != null}"
                  th:src="@{/employee/getImage(fileName=${employee.profilePic})}" width="100">
-            <img th:if="${employee.profilePic == null}" src="/images/162065030153.jpg" width="100">
+            <img th:if="${employee.profilePic == null}" src="/images/img.png" width="100">
 
 
         </td>
